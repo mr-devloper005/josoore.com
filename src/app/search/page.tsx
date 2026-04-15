@@ -4,8 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Search } from "lucide-react";
 import { fetchSiteFeed } from "@/lib/site-connector";
 import { buildPostUrl, getPostTaskKey } from "@/lib/task-data";
-import { getMockPostsForTask } from "@/lib/mock-posts";
-import { SITE_CONFIG } from "@/lib/site-config";
 import { TaskPostCard } from "@/components/shared/task-post-card";
 
 export const revalidate = 3;
@@ -37,12 +35,7 @@ export default async function SearchPage({
       ? { fresh: true, category: category || undefined, task: task || undefined }
       : undefined
   );
-  const posts =
-    feed?.posts?.length
-      ? feed.posts
-      : useMaster
-        ? []
-        : SITE_CONFIG.tasks.flatMap((task) => getMockPostsForTask(task.key));
+  const posts = feed?.posts?.length ? feed.posts : [];
 
   const filtered = posts.filter((post) => {
     const content = post.content && typeof post.content === "object" ? post.content : {};
@@ -76,7 +69,7 @@ export default async function SearchPage({
       description={
         query
           ? `Results for "${query}"`
-          : "Browse the latest posts across every task."
+          : "Browse the latest posts from the feed."
       }
       actions={
         <form action="/search" className="flex w-full gap-2 sm:w-auto">
@@ -84,15 +77,18 @@ export default async function SearchPage({
           {category ? <input type="hidden" name="category" value={category} /> : null}
           {task ? <input type="hidden" name="task" value={task} /> : null}
           <div className="relative w-full sm:w-80">
-            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+            <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
             <Input
               name="q"
               defaultValue={query}
-              placeholder="Search across tasks..."
-              className="h-11 pl-9"
+              placeholder="Search articles and posts…"
+              className="h-11 rounded-full border-slate-200 pl-9"
             />
           </div>
-          <Button type="submit" className="h-11">
+          <Button
+            type="submit"
+            className="h-11 rounded-full bg-[#0f172a] px-6 text-white hover:bg-slate-800"
+          >
             Search
           </Button>
         </form>
@@ -101,14 +97,14 @@ export default async function SearchPage({
       {results.length ? (
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {results.map((post) => {
-            const task = getPostTaskKey(post);
-            const href = task ? buildPostUrl(task, post.slug) : `/posts/${post.slug}`;
-            return <TaskPostCard key={post.id} post={post} href={href} />;
+            const postTask = getPostTaskKey(post);
+            const href = postTask ? buildPostUrl(postTask, post.slug) : `/posts/${post.slug}`;
+            return <TaskPostCard key={post.id} post={post} href={href} taskKey={postTask ?? undefined} />;
           })}
         </div>
       ) : (
-        <div className="rounded-2xl border border-dashed border-border p-10 text-center text-muted-foreground">
-          No matching posts yet.
+        <div className="rounded-3xl border border-dashed border-slate-200 bg-white/80 p-10 text-center text-slate-600">
+          No matching posts yet. Try another term or check back when new stories are published.
         </div>
       )}
     </PageShell>
