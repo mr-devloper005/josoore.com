@@ -115,7 +115,6 @@ export default function PressPage() {
             >
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">{item.outlet}</p>
               <p className="mt-2 text-sm font-medium leading-relaxed text-[#0f172a]">{item.headline}</p>
-              <p className="mt-3 text-xs text-slate-500">{item.date}</p>
             </article>
           ))}
         </section>
