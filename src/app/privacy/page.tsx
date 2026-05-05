@@ -27,9 +27,6 @@ export default function PrivacyPage() {
       description="How we handle personal information for readers, contributors, and partners who use this site."
     >
       <div className="space-y-8">
-        <p className="text-sm text-slate-600">
-          <span className="font-semibold text-[#0f172a]">Last updated:</span> April 15, 2026
-        </p>
         <div className="grid gap-6 md:grid-cols-3">
           {sections.map((s) => (
             <div key={s.title} className="rounded-3xl border border-slate-200/80 bg-white p-6 shadow-sm">
