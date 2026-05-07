@@ -64,7 +64,6 @@ export default function StatusPage() {
                 className="rounded-2xl border border-slate-100 bg-slate-50/80 px-4 py-4 sm:px-5"
               >
                 <div className="flex flex-wrap items-center justify-between gap-2">
-                  <span className="text-xs font-semibold uppercase tracking-wide text-slate-500">{incident.date}</span>
                   <Badge variant="outline" className="rounded-full border-slate-200 text-slate-700">
                     {incident.status}
                   </Badge>

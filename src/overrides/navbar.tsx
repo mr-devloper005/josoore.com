@@ -54,9 +54,6 @@ export function NavbarOverride() {
             <span className="block truncate text-lg font-semibold tracking-tight text-[#0f172a] sm:text-xl">
               {SITE_CONFIG.name}
             </span>
-            <span className="hidden text-[10px] font-medium uppercase tracking-[0.2em] text-slate-500 sm:block">
-              Articles &amp; insights
-            </span>
           </div>
         </Link>
 

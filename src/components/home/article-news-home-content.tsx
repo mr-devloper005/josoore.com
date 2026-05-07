@@ -148,8 +148,6 @@ export function ArticleNewsHomeContent({ posts }: { posts: SitePost[] }) {
                 {featured.summary || 'A closer look at the ideas shaping how we publish, read, and share long-form work online.'}
               </p>
               <div className="mt-6 flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-wide text-slate-500">
-                {formatPostDate(featured) ? <span>{formatPostDate(featured)}</span> : null}
-                {formatPostDate(featured) ? <span aria-hidden="true">—</span> : null}
                 <span>{readMinutes(featured)} min read</span>
               </div>
               <div className="mt-8 flex items-center gap-3">
@@ -196,7 +194,7 @@ export function ArticleNewsHomeContent({ posts }: { posts: SitePost[] }) {
                   <h3 className="mt-2 text-lg font-semibold tracking-tight text-[#0f172a] group-hover:text-violet-700">{post.title}</h3>
                   <p className="mt-3 line-clamp-2 text-sm text-slate-600">{post.summary}</p>
                   <div className="mt-4 text-xs font-semibold uppercase tracking-wide text-slate-500">
-                    {formatPostDate(post) || '—'} · {readMinutes(post)} min read
+                    {readMinutes(post)} min read
                   </div>
                 </div>
               </Link>
@@ -216,7 +214,7 @@ export function ArticleNewsHomeContent({ posts }: { posts: SitePost[] }) {
                   'Practical ideas for building a sustainable editorial rhythm, from research and drafting to promotion and measurement.'}
               </p>
               <div className="mt-6 text-xs font-semibold uppercase tracking-wide text-amber-900/70">
-                {formatPostDate(highlight) || 'Latest'} · {readMinutes(highlight)} min read
+                {readMinutes(highlight)} min read
               </div>
               <Button asChild className="mt-8 rounded-full bg-[#0f172a] px-6 text-white hover:bg-slate-800">
                 <Link href={`/articles/${highlight.slug}`}>Read the guide</Link>
@@ -247,7 +245,7 @@ export function ArticleNewsHomeContent({ posts }: { posts: SitePost[] }) {
                       <h3 className="text-base font-semibold tracking-tight text-[#0f172a] sm:text-lg">{post.title}</h3>
                       <p className="mt-1 line-clamp-2 text-sm text-slate-600">{post.summary}</p>
                       <p className="mt-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
-                        {formatPostDate(post)} · {readMinutes(post)} min read
+                        {readMinutes(post)} min read
                       </p>
                     </div>
                   </Link>
