@@ -72,13 +72,7 @@ export function NavbarOverride() {
                 <Link href="/help">Help Center</Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
-                <Link href="/blog">Editorial blog</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link href="/press">Press</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link href="/status">Status</Link>
+                <Link href="/search">Search</Link>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
@@ -91,9 +85,6 @@ export function NavbarOverride() {
             <DropdownMenuContent align="center" className="min-w-[200px]">
               <DropdownMenuItem asChild>
                 <Link href="/about">About</Link>
-              </DropdownMenuItem>
-              <DropdownMenuItem asChild>
-                <Link href="/team">Team</Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
                 <Link href="/careers">Careers</Link>

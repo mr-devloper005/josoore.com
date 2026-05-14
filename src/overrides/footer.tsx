@@ -10,7 +10,6 @@ const columns = [
     links: [
       { name: 'Overview', href: '/articles' },
       { name: 'Search', href: '/search' },
-      { name: 'Developers', href: '/developers' },
       { name: 'Security', href: '/privacy' },
     ],
   },
@@ -20,15 +19,12 @@ const columns = [
       { name: 'Contact', href: '/contact' },
       { name: 'Careers', href: '/careers' },
       { name: 'About', href: '/about' },
-      { name: 'Team', href: '/team' },
     ],
   },
   {
     title: 'Support',
     links: [
       { name: 'Help Center', href: '/help' },
-      { name: 'Status', href: '/status' },
-      { name: 'Community', href: '/community' },
       { name: 'Privacy Policy', href: '/privacy' },
     ],
   },
@@ -83,23 +79,11 @@ export function FooterOverride() {
             &copy; {year} {SITE_CONFIG.name}. All rights reserved.
           </p>
           <div className="flex flex-wrap items-center gap-4">
-            <a href={`mailto:hello@${SITE_CONFIG.domain}`} className="font-medium text-[#0f172a] hover:text-violet-700">
-              hello@{SITE_CONFIG.domain}
-            </a>
+           
             <span className="hidden text-slate-300 sm:inline" aria-hidden>
               |
             </span>
-            <div className="flex gap-3 text-slate-500">
-              <Link href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-[#0f172a]">
-                <Facebook className="h-5 w-5" />
-              </Link>
-              <Link href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:text-[#0f172a]">
-                <Twitter className="h-5 w-5" />
-              </Link>
-              <Link href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-[#0f172a]">
-                <Linkedin className="h-5 w-5" />
-              </Link>
-            </div>
+            
           </div>
         </div>
       </div>

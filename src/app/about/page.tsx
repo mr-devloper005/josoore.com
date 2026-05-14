@@ -111,29 +111,6 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <section>
-          <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Editorial desk</p>
-              <h2 className="mt-2 text-2xl font-semibold tracking-tight text-[#0f172a]">Meet the leads</h2>
-            </div>
-            <Button variant="ghost" asChild className="w-fit rounded-full text-violet-700 hover:text-violet-900">
-              <Link href="/team">See full team</Link>
-            </Button>
-          </div>
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
-            {team.map((member) => (
-              <div key={member.name} className="rounded-3xl border border-slate-200/80 bg-white p-6 shadow-sm">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-violet-100 to-slate-100 text-lg font-semibold text-[#0f172a]">
-                  {member.initials}
-                </div>
-                <p className="mt-4 text-base font-semibold text-[#0f172a]">{member.name}</p>
-                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">{member.role}</p>
-                <p className="mt-3 text-sm leading-relaxed text-slate-600">{member.bio}</p>
-              </div>
-            ))}
-          </div>
-        </section>
       </div>
     </PageShell>
   );
