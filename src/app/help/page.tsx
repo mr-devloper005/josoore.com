@@ -42,12 +42,6 @@ const faqs = [
     answer:
       'Core articles on this site are free to read. Some partner series may link to external publications with their own access rules.',
   },
-  {
-    id: 'faq-4',
-    question: 'How can I report an accessibility issue?',
-    answer:
-      `Email hello@${SITE_CONFIG.domain} with “Accessibility” in the subject line and the article URL. We prioritize fixes that block reading or navigation.`,
-  },
 ]
 
 export default function HelpPage() {
